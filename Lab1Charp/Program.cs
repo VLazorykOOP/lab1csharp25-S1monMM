@@ -1,16 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
 
- static void task1()
+class Program
 {
-    Console.WriteLine("Task1 !");
-    Console.Write("s= ");
-    string? str = Console.ReadLine();
-    float s = 0; 
-    if (str != null) s = float.Parse(str);
-    double p = 4 * Math.Sqrt(s);
-    Console.WriteLine("p=" + p);
+    static void Main()
+    {
+        // Введення значень n і m
+        Console.Write("Введіть ціле число n: ");
+        int n = Convert.ToInt32(Console.ReadLine());
 
+        Console.Write("Введіть ціле число m: ");
+        int m = Convert.ToInt32(Console.ReadLine());
+
+        // Перевірка ділення на нуль
+        int denominator = n + m * m + 1;
+        if (denominator == 0)
+        {
+            Console.WriteLine("Помилка: знаменник дорівнює нулю.");
+            return;
+        }
+
+        // Обчислення виразу
+        double result = (3.0 / denominator + 1) * (m - n);
+
+        // Виведення результату
+        Console.WriteLine($"Результат виразу: {result}");
+    }
 }
-Console.WriteLine("Lab 1 !");
-task1();
-// continue ...
